@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#story-board-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#loading-animation {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #fff;
+    border-top: 5px solid #ff0000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.character-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.character {
+    image-rendering: pixelated;
+    width: 100px;
+    height: 150px;
+    position: relative;
+    background-color: transparent;
+    border: 2px solid #000;
+}
+
+/* .character-face {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    height: 30%;
+    background-color: #F5DEB3;
+    border: 1px solid #8B4513;
+    } */
+
+/* .character-hair {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background-color: #8B4513;
+    border-bottom: 1px solid #000;
+} */
+
+.character-pinaz {
+    background-color: #FF69B4;
+}
+
+    /* .character-anil-hair {
+        
+        background: linear-gradient(to right,
+        transparent 0%,
+        transparent 40%,
+        #8B4513 40%,
+        #8B4513 60%,
+        transparent 60%
+        );
+        height: 20%;
+        top: 10%; 
+        }
+
+        .character-anil::after {
+            content: '';
+            position: absolute;
+            bottom: 35%;
+            left: 25%;
+            width: 50%;
+            height: 5px;
+            background: linear-gradient(to right,
+            rgba(80,80,80,0.3) 0%,
+            rgba(80,80,80,0.7) 50%,
+            rgba(80,80,80,0.3) 100%
+            );
+            } */
+
+.game-commentary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Character Avatar Styles */
+.anil-avatar, .pinaz-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    overflow: hidden;
+}
+
+.pinaz-avatar {
+    background-color: #FF69B4; /* Pinaz's characteristic pink */
+}
+
+/* Shared glare effect */
+.anil-avatar::before,
+.pinaz-avatar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, 
+        rgba(255,255,255,0.3) 0%, 
+        rgba(255,255,255,0) 50%
+    );
+    border-radius: 50%;
+}
+
+/* Character emoji or initial placement */
+.anil-avatar::after {
+    content: '👨‍💻'; /* Coding/professional emoji for Anil */
+}
+
+
+.pinaz-avatar::after {
+    content: '👧';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.commentary-text {
+    flex-grow: 1;
+    font-family: 'Comic Sans MS', cursive;
+    color: #333;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.character-anil {
+    background-color: #4682B4;
+}
+
+.character-glasses {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .glasses-lens {
+        width: 15px;
+        height: 10px;
+        background-color: transparent;
+        border: 2px solid #000;
+        border-radius: 50%;
+        box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+
+
+        .character-glasses::before {
+            /* Glasses frame */
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: 15px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background: rgba(200,200,200,0.2);
+            }
+
+.dialogue-box {
+    background-color: #333;
+    border: 4px solid #fff;
+    padding: 20px;
+    max-width: 80%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dialogue-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.next-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* From HTML file */
+#player-name-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#player-name-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+}
+
+#player-name-input {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#start-game-btn {
+    width: 100%;
+}
+
+canvas {
+    max-width: 100%;
+}
